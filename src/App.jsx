@@ -37,7 +37,7 @@ export default function App() {
     setHoveredWord(null);
     try {
       const res = await fetch(
-        `https://api.quran.com/api/v4/verses/by_key/${selectedSurah.number}:${selectedAyah}?words=true&word_fields=text_uthmani,transliteration,translation&word_translation_language=en&fields=text_uthmani`
+        `https://api.quran.com/api/v4/verses/by_key/${selectedSurah.number}:${selectedAyah}?words=true&word_fields=text_uthmani,transliteration,translation,char_type_name&word_translation_language=en&fields=text_uthmani`
       );
       if (!res.ok) throw new Error(`API returned ${res.status}`);
       const data = await res.json();
